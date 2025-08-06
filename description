@@ -1,0 +1,32 @@
+
+
+This repository contains a Python script that demonstrates data processing and analysis using the Polars library, which is designed for fast DataFrame operations, and the Glob library for file handling. The script reads various datasets, performs data cleaning, transformation, and analysis, and generates insights from the data.
+
+#Libraries Used
+Polars: A fast DataFrame library implemented in Rust, which provides high-performance data manipulation capabilities. It is particularly useful for handling large datasets efficiently.
+Glob: A module that allows for Unix style pathname pattern expansion. It is used to retrieve file paths matching a specified pattern, making it easier to read multiple files from a directory.
+
+#Overview of the Code
+Import Libraries: The script begins by importing the necessary libraries, including Polars and Glob.
+File Path Setup: A folder path is defined to locate the raw data files.
+File Reading Function: A function smart_read_files is created to read various file formats (CSV, TSV, JSON,Parquet) and store them in a dictionary for easy access.
+Data Access: The datasets are accessed and stored in variables for further processing.
+Data Inspection: The script checks the structure and contents of the datasets using methods like head(), glimpse(), and schema.
+
+#Data Cleaning:
+Columns are renamed for consistency using a defined dictionary of renaming rules.
+New rows are added to datasets to handle missing values.
+Duplicate rows are removed, and null values are filled with appropriate defaults.
+
+#Data Transformation:
+New columns are created, such as extracting the pickup year from datetime.
+Rows are filtered based on specific conditions (e.g., removing certain years).
+Data Joining: The cleaned datasets are joined together based on common keys to create a final DataFrame.
+
+#Data Analysis: Various aggregations and analyses are performed, including:
+Total trips by payment type.
+Total passengers by month and year.
+Total trip distance by trip type description.
+Total and average congestion surcharge by vendor name.
+Summary statistics by service zone.
+Total amounts and trip types by various categories.
